@@ -12,7 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<RedSocialContext>(option =>
     {
-        option.UseSqlServer(builder.Configuration.GetConnectionString("cadena"));
+        option.UseSqlServer(builder.Configuration.GetConnectionString("cadena2"));
     });
 builder.Services.AddCors(options => 
 {
