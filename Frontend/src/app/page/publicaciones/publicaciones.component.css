@@ -1,0 +1,55 @@
+body {
+    background-color: #283747;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+div {
+    height: 90%;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    object-fit: cover;
+}
+
+mat-card {
+    height: 100%;
+    width: 70%;
+
+}
+
+mat-card-content {
+
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    border-radius: 50%;
+    width: 40px;
+    /* Cambia el ancho según tus necesidades */
+    height: 40px;
+}
+
+.example-button-container {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+mat-card-footer {
+    display: flex;
+    justify-content: center;
+
+}
+
+.fecha {
+
+    text-align: right;
+    padding-right: 20px;
+}

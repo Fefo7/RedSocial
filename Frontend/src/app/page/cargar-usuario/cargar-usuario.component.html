@@ -1,0 +1,32 @@
+<div class="mat-elevation-z2" style="width: 30%; padding:30px;margin:50px auto; display: flex;justify-content: center;">
+    <form [formGroup]="formUsuario">
+        <div class="flex">
+            <mat-form-field>
+                <mat-label>Nombre</mat-label>
+                <input matInput formControlName="Nombre">
+            </mat-form-field>
+        </div>
+        <div class="flex">
+            <mat-form-field>
+                <mat-label>Apellido</mat-label>
+                <input matInput formControlName="Apellido">
+            </mat-form-field>
+        </div>
+        <div class="flex">
+            <mat-form-field>
+                <mat-label>clave</mat-label>
+                <input matInput formControlName="claveUsuarios">
+            </mat-form-field>
+        </div>
+        <div class="flex">
+            <mat-form-field>
+                <mat-label>fecha de nacimiento</mat-label>
+                <input matInput formControlName="fechaNaciemiento">
+            </mat-form-field>
+        </div>
+        <div class="flex">
+            <button mat-flat-button color="primary" (click)="guardar()">cargar Usuario</button>
+            <button mat-flat-button color="primary" (click)="volver()" style="margin-left: 8px;">Volver</button>
+        </div>
+    </form>
+</div>

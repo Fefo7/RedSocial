@@ -1,0 +1,45 @@
+<mat-card style="width: 70%; margin:50px auto">
+    <mat-card-header>
+        <mat-card-title>
+            <p>lista de usuarios</p>
+        </mat-card-title>
+    </mat-card-header>
+    <div class="example-button-row">
+        <button mat-flat-button color="primary" (click)="nuevo()">cargar Usuario</button>
+    </div>
+
+    <mat-card-content>
+        <table mat-table [dataSource]="listaUsuarios" class="mat-elevation-z2" style="margin-top: 20px">
+            <!--- Note that these columns can be defined in any order.
+                    The actual rendered columns are set as a property on the row definition" -->
+            <ng-container matColumnDef="UsuarioId">
+                <th mat-header-cell *matHeaderCellDef> Id </th>
+                <td mat-cell *matCellDef="let element"> {{element.usuarioId}} </td>
+            </ng-container>
+            <ng-container matColumnDef="Nombre">
+                <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+            </ng-container>
+            <!-- Position Column -->
+            <ng-container matColumnDef="Apellido">
+                <th mat-header-cell *matHeaderCellDef> apellido </th>
+                <td mat-cell *matCellDef="let element"> {{element.apellido}} </td>
+            </ng-container>
+            <!-- Name Column -->
+            <ng-container matColumnDef="fechaNaciemiento">
+                <th mat-header-cell *matHeaderCellDef> fecha Nacimiento </th>
+                <td mat-cell *matCellDef="let element"> {{element.fechaNaciemiento}} </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="claveUsuarios">
+                <th mat-header-cell *matHeaderCellDef> clave </th>
+                <td mat-cell *matCellDef="let element"> {{element.claveUsuarios}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+    </mat-card-content>
+</mat-card>

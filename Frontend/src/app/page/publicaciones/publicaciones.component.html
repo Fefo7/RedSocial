@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div *ngFor="let item of listaPubli">
+        <mat-card>
+            <mat-card-header>
+                <img mat-card-avatar src="https://cronicadelpoder.com/wp-content/uploads/2021/05/Shrek-animal-MX.jpg">
+                <mat-card-title>
+                    <mat-card-subtitle>{{item.usuarios.nombre}}</mat-card-subtitle>
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <img mat-card-md-image
+                    src="https://th.bing.com/th/id/R.f46f8e764ad3f1bdb1736e757c62ecec?rik=twX4MHN1L%2bK3yQ&pid=ImgRaw&r=0">
+                <br>
+            </mat-card-content>
+            <mat-card-content>
+                {{item.descripcion}}
+            </mat-card-content>
+            <mat-card-footer>
+                <div class="example-button-container">
+                    <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="comment"></mat-icon>
+                    </button>
+                    <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="delete"></mat-icon>
+                    </button>
+                    <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add"></mat-icon>
+                    </button>
+
+                </div>
+
+
+
+            </mat-card-footer>
+            <mat-card-subtitle>
+                <p class="fecha">{{formatearFecha(item.fechaPublicacion)}}</p>
+            </mat-card-subtitle>
+
+        </mat-card>
+        <br>
+
+    </div>
+</body>
+
+</html>
