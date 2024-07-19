@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
+
 <body>
+    <button mat-button (click)="openDialog()">Open dialog</button>
     <div *ngFor="let item of listaPubli">
         <mat-card>
             <mat-card-header>
@@ -25,10 +27,12 @@
             </mat-card-content>
             <mat-card-footer>
                 <div class="example-button-container">
-                    <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
-                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="comment"></mat-icon>
+                    <button mat-button color="primary" aria-label="Example icon button with a delete icon"
+                        (click)="openDialog()">
+                        <mat-icon aria-label="Example home icon" fontIcon="comment"></mat-icon>
                     </button>
-                    <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+
+                    <button mat-button color="primary" aria-label="Example icon button with a delete icon">
                         <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="delete"></mat-icon>
                     </button>
                     <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
@@ -36,9 +40,6 @@
                     </button>
 
                 </div>
-
-
-
             </mat-card-footer>
             <mat-card-subtitle>
                 <p class="fecha">{{formatearFecha(item.fechaPublicacion)}}</p>
@@ -48,6 +49,8 @@
         <br>
 
     </div>
+
+
 </body>
 
 </html>
