@@ -33,7 +33,11 @@ namespace RedSocial.Server.Controllers
 
             return publi;
         }
-
+        [HttpGet("Comentario/{idP}")]
+        public async Task<ActionResult<List<Comentario>>> GetComentarios(int idP)
+        {
+            return await _context.Comentarios.Where(cp => cp.PublicacionId == idP).ToListAsync();
+        }
         // GET: api/Publicacion/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Publicacion>> GetPublicacion(int id)
