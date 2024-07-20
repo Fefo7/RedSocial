@@ -11,11 +11,12 @@ import { format } from 'date-fns';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { DialogComentario } from './coment-publicacion-dialog/dialog.Comentario';
 
+
+
 @Component({
   selector: 'app-publicaciones',
   standalone: true,
   imports: [MatCardModule, NgFor, MatButtonModule, MatDividerModule, MatIconModule, MatDialogModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './publicaciones.component.html',
   styleUrl: './publicaciones.component.css',
 })
@@ -33,16 +34,14 @@ export class PublicacionesComponent {
       },
       error: (err) => console.log('error')
     });
-
   }
 
 
-  async openDialog() {
-    const dialogRef = this.dialog.open(DialogComentario);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+  openDialog(id: number): void {
+    this.dialog.open(DialogComentario, {
+      data: { id: id }
     });
+
   }
 
   // puedo usar router para poder redirigir a otras urls

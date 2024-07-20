@@ -10,7 +10,7 @@ import { Comentario } from '../Models/Comentario';
 export class PublicacionService {
     private http = inject(HttpClient);
     private apiUrl: string = appsettings.apiUrl + "Publicacion";
-    private apiUrl2: string = this.apiUrl + "/Comentario";
+    private apiUrl2: string = appsettings.apiUrl + "Publicacion/Comentario";
     constructor() { }
 
     listaPublicaciones() {

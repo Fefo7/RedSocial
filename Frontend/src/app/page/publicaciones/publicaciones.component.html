@@ -8,7 +8,6 @@
 
 
 <body>
-    <button mat-button (click)="openDialog()">Open dialog</button>
     <div *ngFor="let item of listaPubli">
         <mat-card>
             <mat-card-header>
@@ -28,10 +27,9 @@
             <mat-card-footer>
                 <div class="example-button-container">
                     <button mat-button color="primary" aria-label="Example icon button with a delete icon"
-                        (click)="openDialog()">
+                        (click)="openDialog(item.PublicacionId)">
                         <mat-icon aria-label="Example home icon" fontIcon="comment"></mat-icon>
                     </button>
-
                     <button mat-button color="primary" aria-label="Example icon button with a delete icon">
                         <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="delete"></mat-icon>
                     </button>

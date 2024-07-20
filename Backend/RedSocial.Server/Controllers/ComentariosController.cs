@@ -21,12 +21,7 @@ namespace RedSocial.Server.Controllers
             _context = context;
         }
 
-        // GET: api/Comentarios
-        [HttpGet ("Comentario/Publicacion/{idP}")]
-        public async Task<ActionResult<List<Comentario>>> GetComentarios(int idP)
-        {     
-            return await _context.Comentarios.Where(cp => cp.PublicacionId == idP).ToListAsync(); 
-        }
+     
 
         // GET: api/Comentarios/5
         [HttpGet("{id}")]

@@ -1,22 +1,24 @@
-import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
-import { MatDialogModule } from '@angular/material/dialog';
-import { Comentario } from '../../../Models/Comentario';
-import { PublicacionService } from '../../../Services/publicacion.service';
+import { Component, ChangeDetectionStrategy, inject, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+
+
 import { Router } from '@angular/router';
 import { NgFor } from '@angular/common';
+import { PublicacionService } from '../../../Services/publicacion.service';
+import { Comentario } from '../../../Models/Comentario';
+
+
 @Component({
     selector: 'app-publicaciones',
     standalone: true,
     imports: [MatDialogModule, NgFor],
-    changeDetection: ChangeDetectionStrategy.OnPush,
     templateUrl: './dialog.Comentario.html',
-
 })
 export class DialogComentario {
     private publiService = inject(PublicacionService);
     public listaComent: Comentario[] = [];
-    async getComentario() {
-        this.publiService.listaComentario(1).subscribe({
+    getComentario(id: number) {
+        this.publiService.listaComentario(id).subscribe({
             next: (data) => {
                 if (data.length > 0) {
                     this.listaComent = data;
@@ -26,8 +28,12 @@ export class DialogComentario {
         });
 
     }
-    constructor(private router: Router) {
-        this.getComentario();
-
+    constructor(private router: Router,
+        public dialogRef: MatDialogRef<DialogComentario>,
+        @Inject(MAT_DIALOG_DATA) public data: any
+    ) {
+        this.getComentario(data);
     }
+
+
 }

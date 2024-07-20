@@ -1,3 +1,6 @@
-<div *ngFor="let i of listaComent">
-    <p>{{i.contenido}}</p>
+<h1 mat-dialog-title>Comentarios</h1>
+<div mat-dialog-content>
+    <div *ngFor="let comentario of listaComent">
+        <p>{{ comentario.contenido }}</p>
+    </div>
 </div>
